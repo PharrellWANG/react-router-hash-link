@@ -19,6 +19,13 @@ function getElAndScroll() {
   const element = document.getElementById(hashFragment);
   if (element !== null) {
     element.scrollIntoView();
+    var scrolledY = window.scrollY;
+
+    if(scrolledY){
+      // window.scroll(0, scrolledY - '[your header height in pixels]');
+      //E.g.,  
+      window.scroll(0, scrolledY - 64);
+    }
     reset();
     return true;
   }
